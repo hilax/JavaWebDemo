@@ -11,6 +11,10 @@
     <title>标题</title>
   </head>
   <body>
- <div class="day-name-cell" style="text-align: center;color: #e860ff" >我是剧中的</div>
+ <form action="/login" method="post">
+     用户名:<input type="text" name="username"><br/>
+     密&nbsp;码: <input type="password" name="password"><br/>
+     <input type="submit" value="注册" >
+ </form>
   </body>
 </html>

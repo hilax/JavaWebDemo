@@ -5,4 +5,30 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
            version="3.0">
 
+<!--告诉tomcat自定义的servlet的存在-->
+    <servlet>
+        <servlet-name>servlet</servlet-name>
+        <servlet-class>day1.servlet.HelloServlet</servlet-class>
+    <!--配置servlet在项目启动创建对象和初始化-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>servlets</servlet-name>
+        <servlet-class>day1.servlet.EncoderServlet</servlet-class>
+       <init-param>
+           <param-name>encoding</param-name>
+           <param-value>GBK</param-value>
+       </init-param>
+    </servlet>
+
+    <!--对外暴露一个资源名称和该servlet相关联-->
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+        <!-- <url-pattern>必须/开头-->
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlets</servlet-name>
+        <url-pattern>/encoding</url-pattern>
+    </servlet-mapping>
 </web-app>
